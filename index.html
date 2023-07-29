@@ -2,245 +2,331 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Personal Profile</title>
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Profile</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        body {
+            font-family: "Arial", sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
 
-    body {
-      font-family: "Arial", sans-serif;
-      line-height: 1.6;
-      background-color: #f9f9f9;
-    }
+        header {
+            height: 200px;
+            background: linear-gradient(135deg, #8FD3F4, #7FFFD4);
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
-    header {
-      background-image: url("https://imgtr.ee/images/2023/07/29/d8c2976debf375b5c4f32465ccd6b18c.jpeg");
-      background-size: cover;
-      background-position: bottom;
-      color: #fff;
-      text-align: center;
-      padding: 120px 0;
-    }
+        header h1 {
+            font-size: 64px;
+            margin: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
 
-    header h1 {
-      font-size: 64px;
-      margin: 10px 0;
-      text-transform: uppercase;
-      letter-spacing: 5px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    }
+        header p {
+            font-size: 24px;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
 
-    header p {
-      font-size: 24px;
-      letter-spacing: 2px;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    }
+        nav {
+            text-align: center;
+            background-color: #222;
+            padding: 10px 0;
+        }
 
-    nav {
-      text-align: center;
-      background-color: #222;
-      padding: 10px 0;
-    }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
-      font-size: 16px;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
+        nav a:hover {
+            text-decoration: underline;
+        }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #fff;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-    }
+        .profile-picture {
+            display: block;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto;
+            overflow: hidden;
+            border: 5px solid #fff;
+        }
 
-    .profile-picture {
-      display: block;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      margin: 0 auto;
-      overflow: hidden;
-      border: 5px solid #fff;
-    }
+        .profile-picture img {
+            width: 100%;
+            height: 160%;
+            object-fit: cover;
+        }
 
-    .profile-picture img {
-      width: 100%;
-      height: 160%;
-      object-fit: cover;
-    }
+        .profile-details {
+            text-align: center;
+            margin-top: 20px;
+        }
 
-    .profile-details {
-      text-align: center;
-      margin-top: 20px;
-    }
+        .profile-details h1 {
+            margin: 10px 0;
+            font-size: 32px;
+            color: #333;
+        }
 
-    .profile-details h1 {
-      margin: 10px 0;
-      font-size: 32px;
-      color: #333;
-    }
+        .profile-details p {
+            margin: 5px 0;
+            color: #666;
+        }
 
-    .profile-details p {
-      margin: 5px 0;
-      color: #666;
-    }
+        .section {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-    .section {
-      margin-top: 30px;
-      padding: 20px;
-      background-color: #f2f2f2;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+        .section h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
 
-    .section h2 {
-      border-bottom: 2px solid #333;
-      padding-bottom: 5px;
-      font-size: 24px;
-      color: #333;
-      margin-bottom: 20px;
-    }
+        .section p {
+            text-align: justify;
+            margin-top: 10px;
+            color: #666;
+        }
 
-    .section p {
-      margin-top: 10px;
-      color: #666;
-    }
+        a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
 
-    a {
-      color: #3498db;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
+        a:hover {
+            color: #1e87c9;
+        }
 
-    a:hover {
-      color: #1e87c9;
-    }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
 
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #3498db;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      text-transform: uppercase;
-      font-weight: bold;
-    }
+        .btn:hover {
+            background-color: #1e87c9;
+        }
 
-    .btn:hover {
-      background-color: #1e87c9;
-    }
+        .hidden {
+            opacity: 0;
+            transform: translateY(20px);
+        }
 
-    .hidden {
-      opacity: 0;
-      transform: translateY(20px);
-    }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-    .section {
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-  </style>
+        .section {
+            margin-top: 100px;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #222;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        footer p {
+            text-align: left;
+        }
+
+        footer img {
+            border-radius: 50%;
+            width: 40px;
+            height: auto;
+            margin: 10px;
+        }
+    </style>
 </head>
 
 <body>
-  <header>
-    <h1>Felix Gabriel Andaya</h1>
-    <p>Passionate about something | Pursuing Excellence | Constant Learner</p>
-  </header>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#hobbies">Hobbies</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <div class="container">
-    <div class="profile-picture">
-      <img src="https://imgtr.ee/images/2023/07/29/563bd8fa6c9f901490562719e795bb33.png" alt="Profile Picture">
-    </div>
-    <div class="profile-details">
-      <h1>Felix Gabriel C. Andaya</h1>
-      <p>3rd Year BSIT Students</p>
-      <p>Nationality: Filipino</p>
-      <p>Country: Philippines</p>
-      <p>Email: <a href="mailto:felixgabrielandaya12@gmail.com">felixgabrielandaya12@gmail.com</a></p>
-      <p>Website: <a href="https://norocos05.github.io/personalprofile/" target="_blank">norocos05.github.io/personalprofile/</a></p>
+    <header>
+        <h1>Felix Gabriel Andaya</h1>
+        <p><Strong>Passionate about something | Pursuing Excellence | Constant Learner</Strong></p>
+    </header>
+    <nav>
+        <a href="#background">Background</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="container">
+        <div class="profile-picture">
+            <img src="https://imgtr.ee/images/2023/07/29/563bd8fa6c9f901490562719e795bb33.png" alt="Profile Picture">
+        </div>
+        <div class="profile-details">
+            <h1>Felix Gabriel C. Andaya</h1>
+            <p>3rd Year BSIT Students</p>
+            <p>Nationality: Filipino</p>
+            <p>Country: Philippines</p>
+            <p>Email: <a href="mailto:felixgabrielandaya12@gmail.com">felixgabrielandaya12@gmail.com</a></p>
+            <p>Website: <a href="https://norocos05.github.io/personalprofile/"
+                    target="_blank">norocos05.github.io/personalprofile/</a></p>
+        </div>
+
+        <div id="background" class="section hidden">
+            <h2>Background</h2>
+            <p>
+                I was born in Tanauan City, Batangas on May 1, 2000, the year of the Dragon. My family consists of 9
+                members: My mother, father, (6) six children and my grandmother.
+                I'm the 5th child of the six children. Although our life growing up is hard, we grow up with love and
+                care from our parents. Life is simple yet it is so comforting and peaceful.
+                We're currently living on our own house in Gloria Compound, Barangay 6, Tanauan City. My favorite thing
+                to do when I have nothing to do is play computer/mobile games and cooking.
+            </p>
+        </div>
+
+        <div id="hobbies" class="section hidden">
+            <h2>Hobbies</h2>
+            <h3>Outdoor Hobbies</h3>
+            <p>
+                Basketball <a href="https://youtu.be/xvFZjo5PgG0"> - Click to see more</a> <br> Volleyball <a href="https://youtu.be/xvFZjo5PgG0"> - Click to see more</a> 
+                <br> Badminton <a href="https://youtu.be/xvFZjo5PgG0"> - Click to see more</a> <br> Football/Soccer <a href="https://youtu.be/xvFZjo5PgG0"> - Click to see more</a> 
+                <br> Photography <a href="https://imgtr.ee/album/Photography.Jwpu"> <strong>- Click to see more</strong></a>
+            </p>
+            <br>
+            <h3>Indoor Hobbies</h3>
+            <p>
+                Chess <a href="https://youtu.be/xvFZjo5PgG0"> - Click to see more</a> <br> Table Tennis <a href="https://youtu.be/xvFZjo5PgG0"> - Click to see more</a>
+                <br> Playing Computer Games <a href="https://youtu.be/xvFZjo5PgG0"> - Click to see more</a> <br> Baking & Cooking <a href="https://youtu.be/xvFZjo5PgG0"> - Click to see more</a>
+            </p>
+        </div>
+
+        <div id="education" class="section hidden">
+            <h2>Education</h2>
+            <h3>Primary Education</h3>
+            <p>
+                <strong>Primary School Name:</strong> Santor Elementary School
+                <br>
+                I started studying at Santor Elementary School in the year 2006 and graduated in the year 2013.
+                I joined a chess tournament starting in 5th grade as a board-2 player and won 2nd place in the district
+                meet.
+            </p>
+            <br>
+            <h3>Secondary Education</h3>
+            <p>
+                <strong>Secondary School Name:</strong> Tanauan City Integrated High School
+                <br>
+                I started studying at Tanauan City Integrated High School in the year 2013 and graduated in the year
+                2019. I joined the MHCC Club which stands for Mary Help of Christian Crusade
+                - an organization within the school that is lead and formed by seminarians that are on mission. In my
+                8th grade I was awarded with the Academic Excellence.
+                In my Senior Year, I chose the STEM strand to study and on my last year as a senior, my group in
+                research conducted a study about charger powered by Solar Energy.
+            </p>
+            <br>
+            <h3>Tertiary Education</h3>
+            <p>
+                <strong>Tertiary Institution Name:</strong> Polytechnic University Of The Philippines - Sto. Tomas
+                Batangas
+                <br>
+                I started studying at Polytechnic University Of The Philippines - Sto. Tomas Batangas in the year 2020,
+                I applied on the IT course. And fortunately,
+                I am now on my 3rd year and going to be a 4th year student in the upcoming school year 2023-2024.
+                Until now, COMSOC is the only organization I joined since I started studying at this school.
+            </p>
+        </div>
+
+        <div id="contact" class="section hidden">
+            <h2>Contact</h2>
+            <p>
+                Feel free to contact me through the email address provided above.
+            </p>
+            <a href="mailto:felixgabrielandaya12@gmail.com"><button class="btn">Send Email</button></a>
+        </div>
     </div>
 
-    <div id="home" class="section hidden">
-      <h2>Home</h2>
-      <p>
-        Tell a bit about your background, where you grew up, and your current residence.
-      </p>
-    </div>
+    <footer>
+        <p>Visit and follow my</p>
+        <a href="https://www.facebook.com/whitetsokoleyt" target="_blank"><img
+                src="https://img.freepik.com/free-icon/facebook_318-157463.jpg" alt="Facebook"></a>
+        <a href="https://www.instagram.com/norocos_gabi/" target="_blank"><img
+                src="https://cdn3.iconfinder.com/data/icons/2018-social-media-logotypes/1000/2018_social_media_popular_app_logo_instagram-512.png"
+                alt="Instagram"></a>
+        <a href="https://github.com/Norocos05" target="_blank"><img
+                src="data:image/png;base64,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"
+                alt="Github"></a>
+        <a href="https://youtube.com/@saucybakerr4945" target="_blank"><img
+                src="https://img.freepik.com/premium-vector/red-youtube-logo-social-media-logo_197792-1803.jpg?w=2000"
+                alt="YouTube"></a>
+    </footer>
 
-    <div id="hobbies" class="section hidden">
-      <h2>Hobbies</h2>
-      <p>
-        Share your favorite hobbies and activities you enjoy during your leisure time.
-      </p>
-    </div>
-
-    <div id="education" class="section hidden">
-      <h2>Education</h2>
-      <p>
-        Mention your educational achievements and degrees earned.
-      </p>
-    </div>
-
-    <div id="contact" class="section hidden">
-      <h2>Contact</h2>
-      <p>
-        Feel free to contact me through the email address provided above.
-      </p>
-      <button class="btn">Send Email</button>
-    </div>
-  </div>
-
-  <script>
-    function isElementInViewport(element) {
-      const rect = element.getBoundingClientRect();
-      return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-      );
-    }
-
-    function handleScroll() {
-      const sections = document.querySelectorAll('.section');
-      sections.forEach(section => {
-        if (isElementInViewport(section)) {
-          section.classList.add('visible');
-        } else {
-          section.classList.remove('visible');
+    <script>
+        // Function to handle intersection changes
+        function handleIntersection(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
         }
-      });
-    }
 
-    window.addEventListener('scroll', handleScroll);
+        // Create an intersection observer instance
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5, // Adjust threshold as needed
+        };
 
-    handleScroll();
-  </script>
+        const observer = new IntersectionObserver(handleIntersection, options);
+
+        // Observe each section
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
-
 </html>
