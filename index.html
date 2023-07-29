@@ -4,21 +4,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile</title>
+  <title>My Personal Profile</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
+
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background-color: #f2f2f2;
+    }
+
+    body {
+      font-family: "Arial", sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
     }
 
     header {
-        background-color: #2c3e50;
+      background-image: url("https://imgtr.ee/images/2023/07/29/d8c2976debf375b5c4f32465ccd6b18c.jpeg");
+      background-size: cover;
+      background-position: bottom;
       color: #fff;
       text-align: center;
-      padding: 20px 0;
+      padding: 120px 0;
+    }
+
+    header h1 {
+      font-size: 64px;
+      margin: 10px 0;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    header p {
+      font-size: 24px;
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    nav {
+      text-align: center;
+      background-color: #222;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
     }
 
     .container {
@@ -26,8 +66,8 @@
       margin: 0 auto;
       padding: 20px;
       background-color: #fff;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
     }
 
     .profile-picture {
@@ -37,13 +77,13 @@
       border-radius: 50%;
       margin: 0 auto;
       overflow: hidden;
+      border: 5px solid #fff;
     }
 
     .profile-picture img {
       width: 100%;
-      height: 150%;
+      height: 160%;
       object-fit: cover;
-      border: none;
     }
 
     .profile-details {
@@ -54,86 +94,81 @@
     .profile-details h1 {
       margin: 10px 0;
       font-size: 32px;
-      color: #2c3e50;
+      color: #333;
     }
 
     .profile-details p {
       margin: 5px 0;
+      color: #666;
     }
 
     .section {
       margin-top: 30px;
       padding: 20px;
-      background-color: #f8c291;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: #f2f2f2;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .section h2 {
-      border-bottom: 2px solid #2c3e50;
+      border-bottom: 2px solid #333;
       padding-bottom: 5px;
       font-size: 24px;
-      color: #2c3e50;
+      color: #333;
+      margin-bottom: 20px;
     }
 
     .section p {
       margin-top: 10px;
+      color: #666;
     }
 
-    /* Design for links */
     a {
       color: #3498db;
       text-decoration: none;
+      transition: color 0.3s ease;
     }
 
     a:hover {
-      text-decoration: underline;
+      color: #1e87c9;
     }
 
-    /* Design for buttons */
     .btn {
       display: inline-block;
-      padding: 8px 16px;
-      background-color: #2c3e50;
+      padding: 10px 20px;
+      background-color: #3498db;
       color: #fff;
       border: none;
       border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.3s ease;
-    }
-
-    .btn:hover {
-      background-color: #1e2b3a;
-    }
-
-    nav {
-      text-align: center;
-      background-color: #333;
-      padding: 10px 0;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
+      text-transform: uppercase;
       font-weight: bold;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    .btn:hover {
+      background-color: #1e87c9;
     }
 
+    .hidden {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .section {
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
   </style>
 </head>
 
 <body>
   <header>
-    <h1>My Personal Profile</h1>
+    <h1>Felix Gabriel Andaya</h1>
+    <p>Passionate about something | Pursuing Excellence | Constant Learner</p>
   </header>
   <nav>
     <a href="#home">Home</a>
     <a href="#hobbies">Hobbies</a>
-    <a href="#background">Background</a>
     <a href="#education">Education</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -142,42 +177,36 @@
       <img src="https://imgtr.ee/images/2023/07/29/563bd8fa6c9f901490562719e795bb33.png" alt="Profile Picture">
     </div>
     <div class="profile-details">
-      <h1>Your Name</h1>
-      <p>Occupation</p>
-      <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-      <p>Location: City, Country</p>
-      <p>Website: <a href="https://www.yourwebsite.com" target="_blank">www.yourwebsite.com</a></p>
+      <h1>Felix Gabriel C. Andaya</h1>
+      <p>3rd Year BSIT Students</p>
+      <p>Nationality: Filipino</p>
+      <p>Country: Philippines</p>
+      <p>Email: <a href="mailto:felixgabrielandaya12@gmail.com">felixgabrielandaya12@gmail.com</a></p>
+      <p>Website: <a href="https://norocos05.github.io/personalprofile/" target="_blank">norocos05.github.io/personalprofile/</a></p>
     </div>
 
-    <div id="home" class="section">
+    <div id="home" class="section hidden">
       <h2>Home</h2>
       <p>
         Tell a bit about your background, where you grew up, and your current residence.
       </p>
     </div>
 
-    <div id="hobbies" class="section">
+    <div id="hobbies" class="section hidden">
       <h2>Hobbies</h2>
       <p>
         Share your favorite hobbies and activities you enjoy during your leisure time.
       </p>
     </div>
 
-    <div id="background" class="section">
-      <h2>Background</h2>
-      <p>
-        Provide some information about your educational or professional background.
-      </p>
-    </div>
-
-    <div id="education" class="section">
+    <div id="education" class="section hidden">
       <h2>Education</h2>
       <p>
         Mention your educational achievements and degrees earned.
       </p>
     </div>
 
-    <div id="contact" class="section">
+    <div id="contact" class="section hidden">
       <h2>Contact</h2>
       <p>
         Feel free to contact me through the email address provided above.
@@ -185,6 +214,33 @@
       <button class="btn">Send Email</button>
     </div>
   </div>
+
+  <script>
+    function isElementInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+
+    function handleScroll() {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => {
+        if (isElementInViewport(section)) {
+          section.classList.add('visible');
+        } else {
+          section.classList.remove('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+    handleScroll();
+  </script>
 </body>
 
 </html>
